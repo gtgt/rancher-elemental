@@ -1,0 +1,24 @@
+#cloud-config
+growpart:
+  mode: auto
+  devices: ['/']
+
+users:
+- name: "admin"
+  passwd: "admin"
+  lock_passwd: true
+  uid: "1000"
+  groups: "users"
+  ssh_authorized_keys:
+  - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC3u/1RLs/cgk2xmqJrv1hgd5loWGwreD5rFXby18kZ2w3Cd7f6XksLjKdYZMfIGp9VpO8DltvIKLP56bjMFuptcD9AYIkMZb6dQ/LhSQOW7sQlWd6HaKe6LZaT82FUbskcs5N+QyDn7JuVWh0QD3IioyDluAarW8cpj6UfUOTMr222Dc0CQh9f7FA8+Xxck18Y0HtPuLwd+WDgZWQdAxprhLC+1w08Mw2YVYQbX3hNKyAUi4/bXvqFta02PYuLZJ16ZA8IHOTrvjfHl9HKzjr7CnNGgMsFFM4HUIvCyuhNQV3pdWMczIg3yChmcl7d1kOdO2bI4yuQx4Eq5upYgnv"
+ssh_authorized_keys:
+  - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC3u/1RLs/cgk2xmqJrv1hgd5loWGwreD5rFXby18kZ2w3Cd7f6XksLjKdYZMfIGp9VpO8DltvIKLP56bjMFuptcD9AYIkMZb6dQ/LhSQOW7sQlWd6HaKe6LZaT82FUbskcs5N+QyDn7JuVWh0QD3IioyDluAarW8cpj6UfUOTMr222Dc0CQh9f7FA8+Xxck18Y0HtPuLwd+WDgZWQdAxprhLC+1w08Mw2YVYQbX3hNKyAUi4/bXvqFta02PYuLZJ16ZA8IHOTrvjfHl9HKzjr7CnNGgMsFFM4HUIvCyuhNQV3pdWMczIg3yChmcl7d1kOdO2bI4yuQx4Eq5upYgnv"
+#runcmd:
+#- foo
+hostname: "elemental"
+write_files:
+- encoding: b64
+  content: CiMgVGhpcyBmaWxlIGNvbnRyb2xzIHRoZSBzdGF0ZSBvZiBTRUxpbnV4
+  path: /foo/bar
+  permissions: "0644"
+  owner: "admin"

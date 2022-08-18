@@ -1,0 +1,16 @@
+iso:
+  rootfs:
+  - channel:system/cos
+  uefi:
+  - channel:live/grub2-efi-image
+  image:
+  - channel:live/grub2
+  - channel:live/grub2-efi-image
+  #- dir:/my/path/to/overlay/iso
+  label: "COS_LIVE"
+repositories:
+  - uri: quay.io/costoolkit/releases-teal
+
+
+name: "Elemental-0"
+date: true

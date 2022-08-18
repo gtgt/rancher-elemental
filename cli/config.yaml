@@ -1,0 +1,13 @@
+install
+   partitions:
+     state:
+       # All sizes are in MiB
+       size: 8192
+     recovery:
+       size: 4096
+     oem:
+       size: 64
+     persistent:
+       # zero size tells parted to use all the available
+       # disk, note this is only functional for the last partition
+       size: 0
